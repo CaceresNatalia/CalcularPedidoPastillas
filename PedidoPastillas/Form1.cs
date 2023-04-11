@@ -32,9 +32,17 @@ namespace PedidoPastillas
 
             pedidoPastillas.Add(pastilla);
 
+            foreach (Control c in this.Controls)
+            {
+                if (c is TextBox)
+                {
+                    ((TextBox)c).Text = "";
+                }
+            }
 
 
-           
+
+
         }
                 
         private void btnMostrar_Click(object sender, EventArgs e)
