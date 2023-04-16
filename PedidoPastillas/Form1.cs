@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace PedidoPastillas
 {
     public partial class frmPedidoPastillas : Form
-    {
+    {   //Acá se crea una lista donde se va a guardar cada objeto (pastilla) creado.
         List<Pastilla> pedidoPastillas = new List<Pastilla>();
         
         public frmPedidoPastillas()
@@ -29,8 +29,13 @@ namespace PedidoPastillas
             pastilla.Sueltas = txbSueltas.Text;
 
             pastilla.Dias = txbPedido.Text;
-
+            //cada vez que se llenen los datos (propiedades) de cada pastilla, se guardan en la 
+            // lista para mostrarlos luego en el campo de abajo.
             pedidoPastillas.Add(pastilla);
+
+            //este bucle, cada vez que se pulsa el botón "Agregar" y se guarda la info ingresada
+            //vuelve a dejar en blanco los campos de texto para volver a ingresar los datos
+            //de la siguiente pastilla.
 
             foreach (Control c in this.Controls)
             {
@@ -44,7 +49,8 @@ namespace PedidoPastillas
 
 
         }
-                
+        //El botón "Mostrar" refleja en el ListBox de abajo todos los ingresos que se fueron
+        //agregando a la lista.
         private void btnMostrar_Click(object sender, EventArgs e)
         {
             
